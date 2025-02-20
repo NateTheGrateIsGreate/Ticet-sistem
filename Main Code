@@ -1,0 +1,199 @@
+import time
+
+error = 1
+
+loop = 1
+
+loop2 = 1
+
+loop3 = 1
+
+seats = [   # Arry of available seats and their prices
+    
+        ["$45.99", "$55.99", "$55.99", "$55.99", "$55.99", "$55.99", "$45.99"], 
+         
+        ["$45.99", "$55.99", "$55.99", "$55.99", "$55.99", "$55.99", "$45.99"],
+
+        ["$35.99", "$45.99", "$45.99", "$45.99", "$45.99", "$45.99", "$35.99"],
+
+        ["$25.99", "$35.99", "$35.99", "$35.99", "$35.99", "$35.99", "$25.99"],
+
+        ["$25.99", "$25.99", "$25.99", "$25.99", "$25.99", "$25.99", "$25.99"],
+
+        ["$25.99", "$15.99", "$15.99", "$15.99", "$15.99", "$15.99", "$25.99"],
+
+        ["$15.99", "$15.99", "$15.99", "$15.99", "$15.99", "$55.99", "$15.99"],
+
+        ["$15.99", "$15.99", "$15.99", "$15.99", "$15.99", "$15.99", "$15.99"]
+
+]
+
+print("""
+      
+      Welcome to the ticket booth
+
+      """)
+
+
+time.sleep(2)
+
+def is_seat_taken(seats, row, collum):
+        
+    return seats[row][collum] == "   X  "  # Check if the seat is taken
+
+while loop  < 2:
+
+
+    print("""
+      
+    Here are the available seats:
+      
+          """)
+
+    time.sleep(2)
+
+    for row in seats:
+
+        time.sleep(.5)
+
+        print(row)
+
+    time.sleep(2)
+
+    while loop2 < 2:  # Loop to check if the user entered a valid seat
+
+        print("""
+        
+          Which seat would you like to purchase? (tipe for example: 1(row), 2(collum)) (starts at 0,0), top left corner)
+        
+            """)
+
+        seat = input()
+
+        if seat == "King":  # Check if the input is valid
+
+            print("I")
+
+            error = 1
+
+            for row in range(len(seats)):
+
+              for col in range(len(seats[row])):
+                  
+                 seats[row][col] = "   X  "
+            
+              loop2 = 2
+
+            continue
+
+        seat = [number.strip() for number in seat.split(',')]  # Split the input into a list
+
+        error = 1
+
+        if len(seat) != 2: # Check if the input is valid
+
+            print("Invalid input. Please enter a valid seat in the format row,column.")
+
+            error = 2
+
+            continue
+
+        if seat[0].isdigit() == False or seat[1].isdigit() == False:  # Check if the input is valid
+
+            print("Invalid input. Please enter a valid seat in the format row,column.")
+
+            error = 2
+
+            continue
+        
+        row = int(seat[0])
+
+        collum = int(seat[1])
+
+        if is_seat_taken(seats, row, collum):
+
+            time.sleep(2)
+
+            print(f"Seat {row},{collum} is already taken.")
+
+            error = 2
+
+        else:
+            time.sleep(2)
+
+            print(f"Seat {row},{collum} is available.")
+
+
+        if row > 7 or collum > 6 or error == 2:  # Check if the seat is valid
+
+            print("Invalid seat. Please enter a valid seat.")
+
+            print("")
+
+        else:
+
+            loop2 = 2
+
+            error = 1
+
+            seats[row][collum] = "   X  "  # Change the selected seat to an X
+
+    time.sleep(2)
+
+    print("""
+        
+        Thank you for your purchase
+
+        """)           
+        
+
+    time.sleep(2)
+
+    print("""
+        
+        Whould you like to purchase another ticket?(Yes or No)
+        
+        """)
+
+    loop3 = 1
+
+    while loop3  < 2:   # Loop to check if the user wants to purchase another ticket
+
+        loopAgain = input()
+
+        if loopAgain == "No":
+
+            print("""
+
+            Thanks agen for your purchase
+
+            """)
+
+            for row in seats:
+
+                time.sleep(.5)
+
+                print(row)
+
+            loop = 2
+
+            loop2 = 2
+
+            loop3 = 2
+
+        if loopAgain == "Yes":
+
+            loop = 1
+
+            loop2 = 1
+            
+            loop3 = 2
+
+        if loopAgain != "Yes" and loopAgain != "No":
+            
+            print("Invalid input. Please enter Yes or No.")
+
+            print("")
+
+
+time.sleep(2)
