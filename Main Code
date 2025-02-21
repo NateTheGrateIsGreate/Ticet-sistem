@@ -12,25 +12,27 @@ index = -1
 
 seats = [   # Arry of available seats and their prices
     
-        ["$40", "$50", "$50", "$50", "$50", "$50", "$50", "$40"], 
+        ["$40 ", "$50 ", "$50 ", "$50 ", "$50 ", "$50 ", "$50 ", "$40 "], 
          
-        ["$30", "$30", "$40", "$50", "$50", "$40", "$30" ,"$30"],
+        ["$30 ", "$30 ", "$40 ", "$50 ", "$50 ", "$40 ", "$30 " ,"$30 "],
 
-        ["$20", "$30", "$30", "$40", "$40", "$30", "$30", "$20"],
+        ["$20 ", "$30 ", "$30 ", "$40 ", "$40 ", "$30 ", "$30 ", "$20 "],
 
-        ["$10", "$20", "$20", "$20", "$20", "$20", "$20", "$10"],
+        ["$10 ", "$20 ", "$20 ", "$20 ", "$20 ", "$20 ", "$20 ", "$10 "],
 
-        ["$10", "$20", "$20", "$20", "$20", "$20", "$20", "$10"],
+        ["$10 ", "$20 ", "$20 ", "$20 ", "$20 ", "$20 ", "$20 ", "$10 "],
 
-        ["$10", "$20", "$20", "$20", "$20", "$20", "$20", "$10"],
+        ["$10 ", "$20 ", "$20 ", "$20 ", "$20 ", "$20 ", "$20 ", "$10 "],
 
-        ["$10", "$10", "$10", "$10", "$10", "$10", "$10", "$10"],
+        ["$10 ", "$10 ", "$10 ", "$10 ", "$10 ", "$10 ", "$10 ", "$10 "],
 
-        ["$10", "$10", "$10", "$10", "$10", "$10", "$10", "$10"],
+        ["$10 ", "$10 ", "$10 ", "$10 ", "$10 ", "$10 ", "$10 ", "$10 "],
 
-        ["$10", "$10", "$10", "$10", "$10", "$10", "$10", "$10"]
+        ["$10 ", "$10 ", "$10 ", "$10 ", "$10 ", "$10 ", "$10 ", "$10 "]
 
 ]
+
+seats = seats[::-1] # Fliping the array
    
 print("""
       
@@ -43,7 +45,7 @@ time.sleep(2)
 
 def is_seat_taken(seats, row, collum):
         
-    return seats[row][collum] == "X "  # Check if the seat is taken
+    return seats[row][collum] == " X  "  # Check if the seat is taken
 
 while loop  < 2:
 
@@ -56,13 +58,11 @@ while loop  < 2:
 
     time.sleep(2)
 
-    print("     0      1      2      3      4      5      6      7")  # Print the seats(COLUMNS)'
-
     for index, row in enumerate(seats):
 
      time.sleep(.5)
 
-     print(f"{index} {row}")  # Print the row number before each row
+     print("".join (row))  # Print rows
 
     time.sleep(2)
 
@@ -88,7 +88,7 @@ while loop  < 2:
 
               for col in range(len(seats[row])):
                   
-                 seats[row][col] = "X "
+                 seats[row][col] = " X  "
             
               loop2 = 2
 
@@ -144,7 +144,7 @@ while loop  < 2:
 
             error = 1
 
-            seats[row][collum] = "X "  # Change the selected seat to an X
+            seats[row][collum] = " X  "  # Change the selected seat to an X
 
     time.sleep(2)
 
@@ -181,7 +181,7 @@ while loop  < 2:
 
               time.sleep(.5)
 
-              print(f"{index + 1} {row}")  # Print the row number before each row
+              print("".join (row))  # Print rows
 
             loop = 2
 
