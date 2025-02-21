@@ -144,7 +144,7 @@ while loop  < 2:
 
             error = 1
 
-            seats[row][collum] = "   X  "  # Change the selected seat to an X
+            seats[row][collum] = "X "  # Change the selected seat to an X
 
     time.sleep(2)
 
