@@ -1,5 +1,5 @@
-#Ticket-sistem
+Ticket-system
 
 This code is a simple ticketing system for a theater.
 
-If you hant all the seats, Jest type "King" to resuvrving them all!
+If you want all the seats, jest type "King" to reserving them all!
