@@ -43,9 +43,9 @@ print("""
 
 time.sleep(2)
 
-def is_seat_taken(seats, row, collum):
+def is_seat_taken(seats, row, column):
         
-    return seats[row][collum] == " X  "  # Check if the seat is taken
+    return seats[row][column] == " X  "  # Check if the seat is taken
 
 while loop  < 2:
 
@@ -70,7 +70,7 @@ while loop  < 2:
 
         print("""
         
-          Which seat would you like to purchase? (tipe for example: 1(row), 2(collum)) (starts at 0,0), top left corner)
+          Which seat would you like to purchase? (tipe for example: 1(row), 2(column)) (starts at 0,0), top left corner)
         
             """)
 
@@ -116,23 +116,23 @@ while loop  < 2:
         
         row = int(seat[0])
 
-        collum = int(seat[1])
+        column = int(seat[1])
 
-        if is_seat_taken(seats, row, collum):
+        if is_seat_taken(seats, row, column):
 
             time.sleep(2)
 
-            print(f"Seat {row},{collum} is already taken.")
+            print(f"Seat {row},{column} is already taken.")
 
             error = 2
 
         else:
             time.sleep(2)
 
-            print(f"Seat {row},{collum} is available.")
+            print(f"Seat {row},{column} is available.")
 
 
-        if row > 7 or collum > 6 or error == 2:  # Check if the seat is valid
+        if row > 7 or column > 6 or error == 2:  # Check if the seat is valid
 
             print("Invalid seat. Please enter a valid seat.")
 
@@ -144,7 +144,7 @@ while loop  < 2:
 
             error = 1
 
-            seats[row][collum] = " X  "  # Change the selected seat to an X
+            seats[row][column] = " X  "  # Change the selected seat to an X
 
     time.sleep(2)
 
