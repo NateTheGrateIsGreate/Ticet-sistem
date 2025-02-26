@@ -70,23 +70,31 @@ while loop  < 2:
 
         print("""
         
-          Which seat would you like to purchase? (tipe for example: 1(row), 2(column)) (starts at 0,0), top left corner)
+          Which seat row  would you like to purchase? (tipe for example 1(row)) 
+            """) 
         
-            """)
 
-        seat = input()
+        seat1 = input()
 
-        if seat == "King":  # Check if the input is valid
+        if seat1 == "King":  # Check if the input is valid
 
+            print("""
+        
+            Which seat row  would you like to purchase? (tipe for example 2(column))
+
+            """) 
+
+         seat2 = input()
+        
             print("The theater is booked jest for you, enjoy the show!(select no at the end to exit)")
 
             loop2 = 2
 
             error = 1
 
-            for row in range(len(seats)):
+            for row in range(len(seats1)):
 
-              for col in range(len(seats[row])):
+              for col in range(len(seats2[row])):
                   
                  seats[row][col] = " X  "
             
