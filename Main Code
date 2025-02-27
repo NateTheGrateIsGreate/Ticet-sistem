@@ -10,6 +10,10 @@ loop3 = 1
 
 index = -1
 
+seats1 = 0
+
+seats2 = 0
+
 seats = [   # Arry of available seats and their prices
     
         ["$40 ", "$50 ", "$50 ", "$50 ", "$50 ", "$50 ", "$50 ", "$40 "], 
@@ -84,7 +88,7 @@ while loop  < 2:
 
             """) 
 
-         seat2 = input()
+            seat2 = input()
         
             print("The theater is booked jest for you, enjoy the show!(select no at the end to exit)")
 
@@ -213,3 +217,4 @@ while loop  < 2:
 
 
 time.sleep(2)
+
